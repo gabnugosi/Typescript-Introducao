@@ -1,5 +1,5 @@
 # Typescript-Introducao
 # Instalar TypeScript via npm
-npm init
-npm install typescript@2.3.2 --save-dev
-npm run compile #compile é passado no package.json
+npm init <br>
+npm install typescript@2.3.2 --save-dev <br>
+npm run compile #compile é passado no package.json<br>
