@@ -2,10 +2,11 @@ class NegociacaoController {
     constructor() {
         // private _negociacoes: Negociacoes= new Negociacoes();
         this._negociacoes = new Negociacoes(); // é possível emitir a tipagem nesse caso
-        this._negociacoesView = new NegociacoesView();
+        this._negociacoesView = new NegociacoesView("#negociacoesView");
         this._inputData = document.querySelector('#data');
         this._inputQuantidade = document.querySelector('#quantidade');
         this._inputValor = document.querySelector('#valor');
+        this._negociacoesView.update();
     }
     adiciona(event) {
         event.preventDefault();
