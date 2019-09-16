@@ -2,6 +2,9 @@ class NegociacaoController {
     private _inputData: HTMLInputElement;
     private _inputQuantidade: HTMLInputElement;
     private _inputValor: HTMLInputElement;
+   // private _negociacoes: Negociacoes= new Negociacoes();
+   private _negociacoes = new Negociacoes(); // é possível emitir a tipagem nesse caso
+   private _negociacoesView = new NegociacoesView();
 
     constructor() {
         this._inputData = <HTMLInputElement> document.querySelector('#data');
@@ -9,15 +12,15 @@ class NegociacaoController {
         this._inputValor = <HTMLInputElement>document.querySelector('#valor');
     }
 
-    adiciona(event: Event) {
+    adiciona(event: Event): void {
         
         event.preventDefault();
 
         const negociacao = new Negociacao(
             new Date(this._inputData.value.replace(/-/g, ',')),
             parseInt(this._inputQuantidade.value),
-            parseFloat(this._inputValor.value));
-
-        console.log(negociacao);
+            parseFloat(this._inputValor.value)
+            );
+            this._negociacoes.adiciona(negociacao);
     }
 }
